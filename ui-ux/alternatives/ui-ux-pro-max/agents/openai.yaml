@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ui Ux Pro Max"
+  short_description: "Search bundled UI/UX guidance, palettes, typography and stack..."
+  default_prompt: "Use $ui-ux-pro-max for the requested work in this project."

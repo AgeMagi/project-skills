@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Fix Pr Backend"
+  short_description: "Review backend PRs and local diffs, and fix authorized findin..."
+  default_prompt: "Use $review-fix-pr-backend for the requested work in this project."

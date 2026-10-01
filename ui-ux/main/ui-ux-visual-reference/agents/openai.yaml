@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI/UX Visual Reference"
+  short_description: "Create UI comps and analyze screenshot references"
+  default_prompt: "Use $ui-ux-visual-reference to create or analyze the requested UI reference images."

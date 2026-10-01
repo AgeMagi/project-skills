@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Identity"
+  short_description: "Create coherent logos, brand kits, and campaign assets"
+  default_prompt: "Use $brand-identity to develop the requested identity or branded assets."

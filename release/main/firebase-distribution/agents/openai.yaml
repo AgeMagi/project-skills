@@ -1,0 +1,4 @@
+interface:
+  display_name: "Firebase Distribution"
+  short_description: "Build and upload an explicitly requested Firebase App Distrib..."
+  default_prompt: "Use $firebase-distribution for the requested work in this project."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clean Worktrees"
+  short_description: "Preview and clean integrated local git worktrees when request..."
+  default_prompt: "Use $clean-worktrees for the requested work in this project."

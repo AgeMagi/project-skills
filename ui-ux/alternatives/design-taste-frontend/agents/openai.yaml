@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Taste Frontend"
+  short_description: "Design distinctive landing pages and portfolios from a brief..."
+  default_prompt: "Use $design-taste-frontend for the requested work in this project."

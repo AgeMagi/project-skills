@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Simulated App"
+  short_description: "Add a new simulated app preview or output format to a product..."
+  default_prompt: "Use $add-simulated-app for the requested work in this project."

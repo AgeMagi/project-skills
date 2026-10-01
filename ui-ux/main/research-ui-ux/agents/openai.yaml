@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Ui Ux"
+  short_description: "Research UI and UX conventions or supplied references, record..."
+  default_prompt: "Use $research-ui-ux for the requested work in this project."

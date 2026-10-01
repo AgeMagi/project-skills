@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "skills": [
+    {
+      "category": "review",
+      "name": "review-fix-pr-frontend",
+      "source": "Adapted from both projects: .agents/skills/review-fix-pr-frontend",
+      "path": "review/main/review-fix-pr-frontend"
+    },
+    {
+      "category": "review",
+      "name": "review-fix-pr-backend",
+      "source": "New portable backend review, informed by autoon/backend/AGENTS.md and shared review scope",
+      "path": "review/main/review-fix-pr-backend"
+    },
+    {
+      "category": "ui-ux",
+      "name": "research-ui-ux",
+      "source": "New portable research step extracted from alternate-universe add-simulated-app workflow",
+      "path": "ui-ux/main/research-ui-ux"
+    },
+    {
+      "category": "ui-ux",
+      "name": "match-ui-reference",
+      "source": "Adapted from both projects: match-ui-reference, helpers copied from autoon",
+      "path": "ui-ux/main/match-ui-reference"
+    },
+    {
+      "category": "project-workflow",
+      "name": "project-workflow",
+      "source": "Shared delivery conventions from both projects; project-specific constraints removed",
+      "path": "project-workflow/main/project-workflow"
+    },
+    {
+      "category": "project-workflow",
+      "name": "linear-task-workflow",
+      "source": "Merged portable workflow from both projects; no copied task.sh/Linear IDs",
+      "path": "project-workflow/main/linear-task-workflow"
+    },
+    {
+      "category": "project-workflow",
+      "name": "clean-worktrees",
+      "source": "Safer autoon implementation selected over alternate-universe forced deletion",
+      "path": "project-workflow/main/clean-worktrees"
+    },
+    {
+      "category": "mobile",
+      "name": "add-simulated-app",
+      "source": "Generalized alternate-universe/.agents/skills/add-simulated-app",
+      "path": "mobile/main/add-simulated-app"
+    },
+    {
+      "category": "release",
+      "name": "firebase-distribution",
+      "source": "Generalized alternate-universe/.agents/skills/firebase-distribution; project script not copied",
+      "path": "release/main/firebase-distribution"
+    },
+    {
+      "category": "ui-ux",
+      "name": "ui-ux-design",
+      "source": "Combined Taste art direction/redesign, canonical UI UX Pro Max engine/data, and Awesome DESIGN.md analyses; commits in ui-ux/main/provenance.json",
+      "path": "ui-ux/main/ui-ux-design"
+    },
+    {
+      "category": "ui-ux",
+      "name": "ui-ux-visual-reference",
+      "source": "Consolidated Taste web/mobile reference generation and generated-image handoff",
+      "path": "ui-ux/main/ui-ux-visual-reference"
+    },
+    {
+      "category": "ui-ux",
+      "name": "brand-identity",
+      "source": "Consolidated Taste brandkit and UI UX Pro Max brand/logo/CIP/banner workflows; local search/data retained",
+      "path": "ui-ux/main/brand-identity"
+    }
+  ]
+}

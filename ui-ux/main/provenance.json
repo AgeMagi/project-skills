@@ -1,0 +1,164 @@
+{
+  "review_date": "2026-10-01",
+  "repositories": [
+    {
+      "directory": "taste-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "commit": "ce26fc25c0e5e8cab638f883de62d9a86ee5e45b"
+    },
+    {
+      "directory": "awesome-design-md",
+      "url": "https://github.com/voltagent/awesome-design-md",
+      "commit": "f6961238d5cddcf8042a74a70fc400ec67181abb"
+    },
+    {
+      "directory": "ui-ux-pro-max-skill",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "09170eec67eefd46a7ae85de61b40c194020f997"
+    }
+  ],
+  "reviewed_unique_skill_entrypoints": [
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/brandkit/SKILL.md",
+      "name": "brandkit",
+      "words": 2600,
+      "sha256": "b0c4837e1bd140ca816ae54948754ddd2ac1e2a4d3619363777a80caf00b2ede"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/brutalist-skill/SKILL.md",
+      "name": "industrial-brutalist-ui",
+      "words": 1075,
+      "sha256": "fffbaac8597f07679e9d87145533567658aedba3b5eca6f16a7075a333048caa"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/gpt-tasteskill/SKILL.md",
+      "name": "gpt-taste",
+      "words": 1134,
+      "sha256": "2e64c269953f2656c21bf5a0fa6b4568e82fe0c72b36e8f84758e090349966a5"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/image-to-code-skill/SKILL.md",
+      "name": "image-to-code",
+      "words": 5820,
+      "sha256": "4c060a8064a8b13380bc2ef3d6e6a1d0b1e316aa093cd9807d0ce9e4eeb037fa"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/imagegen-frontend-mobile/SKILL.md",
+      "name": "imagegen-frontend-mobile",
+      "words": 6552,
+      "sha256": "8a33389979f3074fa0926678e266ad2eb9234624472254469fc1ad916b9caa24"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/imagegen-frontend-web/SKILL.md",
+      "name": "imagegen-frontend-web",
+      "words": 5819,
+      "sha256": "6b5c2256522fdba1e3313eafa3d743b960a7b13ec029d3e6586e04b23327c1f8"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/minimalist-skill/SKILL.md",
+      "name": "minimalist-ui",
+      "words": 1089,
+      "sha256": "36bc7328f085405f43b476938e62460fa573bf7e984e949e072bcf014831a44c"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/output-skill/SKILL.md",
+      "name": "full-output-enforcement",
+      "words": 412,
+      "sha256": "e5bf48b1ae561511439cf71672209a10a88cee0968cc925909ff861dfa0a96a7"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/redesign-skill/SKILL.md",
+      "name": "redesign-existing-projects",
+      "words": 2210,
+      "sha256": "98ad3e5b051bfb71b2795f7e8a6aa0d32b51ee095606c098a4b2822ac07926c9"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/soft-skill/SKILL.md",
+      "name": "high-end-visual-design",
+      "words": 1456,
+      "sha256": "e1e32f5e2d420872c6c7332b53d5ff7721946766b78c4822b424c2d512c8fdbc"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/stitch-skill/SKILL.md",
+      "name": "stitch-design-taste",
+      "words": 1662,
+      "sha256": "46bdb08fee2dded38b6ba0a051230a502d6ac6e4044afd47592cb40c256028b5"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/taste-skill/SKILL.md",
+      "name": "design-taste-frontend",
+      "words": 12853,
+      "sha256": "aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89"
+    },
+    {
+      "repository": "taste-skill",
+      "path": "taste-skill/skills/taste-skill-v1/SKILL.md",
+      "name": "design-taste-frontend-v1",
+      "words": 2937,
+      "sha256": "033d45af1ed23832730642f95f40ab49db7fb5222848489a6c5656144bfc6dae"
+    },
+    {
+      "repository": "ui-ux-pro-max-skill",
+      "path": "ui-ux-pro-max-skill/.claude/skills/banner-design/SKILL.md",
+      "name": "banner-design",
+      "words": 1058,
+      "sha256": "ccb89ddc848f60bfe630cb19dfe3e062df94a029467a9b15259f2761019ac5c4"
+    },
+    {
+      "repository": "ui-ux-pro-max-skill",
+      "path": "ui-ux-pro-max-skill/.claude/skills/brand/SKILL.md",
+      "name": "brand",
+      "words": 489,
+      "sha256": "1c24139633e2ebf11da4f97eaeb1c0564f8658a40b3ad779387a5b8c6cb76dbc"
+    },
+    {
+      "repository": "ui-ux-pro-max-skill",
+      "path": "ui-ux-pro-max-skill/.claude/skills/design/SKILL.md",
+      "name": "design",
+      "words": 1863,
+      "sha256": "c84f3ecfd6a0fd1c46abf6805a0bbc26ea0b94a104f457e243ccf0943ece123c"
+    },
+    {
+      "repository": "ui-ux-pro-max-skill",
+      "path": "ui-ux-pro-max-skill/.claude/skills/design-system/SKILL.md",
+      "name": "design-system",
+      "words": 924,
+      "sha256": "8aa5ff93320559a6e5289d37b6b06b3307737dbfb4a6f3fc44135c705613c511"
+    },
+    {
+      "repository": "ui-ux-pro-max-skill",
+      "path": "ui-ux-pro-max-skill/.claude/skills/slides/SKILL.md",
+      "name": "slides",
+      "words": 222,
+      "sha256": "86c07f19ec09f79441d3837e909cfcd51034b83bdcc88094c15e652be1e765cb"
+    },
+    {
+      "repository": "ui-ux-pro-max-skill",
+      "path": "ui-ux-pro-max-skill/.claude/skills/ui-styling/SKILL.md",
+      "name": "ui-styling",
+      "words": 1277,
+      "sha256": "625e302c60ee8f2e22d56cbe638c4a739e2657f566dae42689503ad517c30f1e"
+    },
+    {
+      "repository": "ui-ux-pro-max-skill",
+      "path": "ui-ux-pro-max-skill/.claude/skills/ui-ux-pro-max/SKILL.md",
+      "name": "ui-ux-pro-max",
+      "words": 2118,
+      "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
+    }
+  ],
+  "brand_reference_count": 74,
+  "note": "Vendored resources are snapshots; git pull on source clones does not update main. UI scripts/data are copied from src/ui-ux-pro-max; brand local search from .claude/skills/design. Generated guidance is curated separately. No global skill installation was performed."
+}

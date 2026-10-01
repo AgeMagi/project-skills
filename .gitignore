@@ -1,0 +1,9 @@
+# Local operating-system and Python artifacts
+.DS_Store
+__pycache__/
+*.py[cod]
+
+# Local upstream repositories; curated resources are committed under main/.
+/ui-ux/taste-skill/
+/ui-ux/ui-ux-pro-max-skill/
+/ui-ux/awesome-design-md/

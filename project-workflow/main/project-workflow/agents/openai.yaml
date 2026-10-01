@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Workflow"
+  short_description: "Carry an authorized project change from scope and implementat..."
+  default_prompt: "Use $project-workflow for the requested work in this project."

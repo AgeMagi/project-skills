@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Fix Pr Frontend"
+  short_description: "Review frontend PRs and local diffs, and fix authorized findi..."
+  default_prompt: "Use $review-fix-pr-frontend for the requested work in this project."

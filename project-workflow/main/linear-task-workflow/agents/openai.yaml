@@ -1,0 +1,4 @@
+interface:
+  display_name: "Linear Task Workflow"
+  short_description: "Deliver project changes with Linear issues, branches, worktre..."
+  default_prompt: "Use $linear-task-workflow for the requested work in this project."

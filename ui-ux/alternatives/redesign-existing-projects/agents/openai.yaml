@@ -1,0 +1,4 @@
+interface:
+  display_name: "Redesign Existing Projects"
+  short_description: "Audit and improve an existing website or app when the user re..."
+  default_prompt: "Use $redesign-existing-projects for the requested work in this project."

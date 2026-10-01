@@ -1,0 +1,4 @@
+interface:
+  display_name: "UI/UX Design"
+  short_description: "Design and improve interfaces with focused guidance"
+  default_prompt: "Use $ui-ux-design to build or improve this interface, preserving its product and brand requirements."
