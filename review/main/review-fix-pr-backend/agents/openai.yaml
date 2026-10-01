@@ -1,4 +1,4 @@
 interface:
-  display_name: "Review Fix Pr Backend"
-  short_description: "Review backend PRs and local diffs, and fix authorized findin..."
-  default_prompt: "Use $review-fix-pr-backend for the requested work in this project."
+  display_name: "Review and Fix Backend PRs"
+  short_description: "Review backend changes and fix authorized defects"
+  default_prompt: "Use $review-fix-pr-backend to review this backend diff and fix findings when authorized."

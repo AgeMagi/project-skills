@@ -1,20 +1,23 @@
 ---
 name: linear-task-workflow
-description: "Deliver project changes with Linear issues, branches, worktrees and pull requests kept in sync. Use only for a project using Linear; discover its team, project, status mapping and git tooling."
+description: "Deliver Linear issues with scope, status, branches and PRs aligned. Use only in projects using Linear."
 ---
 
 # Linear task workflow
 
-Linear owns issue scope, dependencies and status; git owns files and revisions. Discover the destination project's Linear team/project and status names from its instructions or available tools. Ask only if the target cannot be resolved. Never reuse another project's IDs or create a duplicate backlog.
+Discover project instructions, Linear team/project and statuses; resolve ambiguity before tracker writes. Write within existing authorization; search before creating issues. Read acceptance criteria, dependencies and `gitBranchName`; reuse matching work and the exact branch name when available for new branches. After a write timeout, read/search before retrying.
 
-Search for a matching issue before creating one. Create or update an issue only within the user's request and integration authorization. Read acceptance criteria, blocked-by relationships and `gitBranchName`. Reuse matching ongoing work; use the exact Linear branch name for a new branch when available. If a write times out, search/read before retrying to avoid duplicates.
+Inspect local changes and repository-helper options; use the helper when available, otherwise git/PR tools. Refresh the base without overwriting work; reuse suitable worktrees or isolate as required. Keep stacked prerequisites and branch/PR bases consistent.
 
-Inspect git status. Discover the project's repository helper and its help before running it. Use that helper if present; otherwise use equivalent git/PR tools. The skill has no dependency on `tool/task.sh`. Refresh the default branch without overwriting local changes and create an isolated worktree when the project convention calls for it. Stay in a suitable host-provided worktree. For stacked changes, document the prerequisite and use the intended branch/PR base consistently.
+Implement scoped work, update changed contracts and issue title/description when scope changes, and verify repository gates. Keep issue scope/status aligned with progress using the team's mapping:
 
-Map the actual team's statuses to these stages: backlog before work, active when real work exists, review when a verified ready PR exists, completed only after verified merge. A draft PR stays active. A blocked prerequisite stays blocked. Canceled work does not authorize deleting its commits.
+- Resume existing status; mark actual work active rather than resetting to backlog.
+- Draft PRs stay active; verified ready PRs enter review; verified merges complete PR-delivered work.
+- Research/operational issues complete against acceptance criteria and team policy.
+- Record blocked dependencies; cancellation does not authorize deleting commits.
 
-Implement and verify the issue's actual scope. Update title/description when authorized scope changes. Commit only scoped work. When push/PR delivery is authorized, update the existing PR or create the requested one, and link it to Linear. Describe the final change, checks, limitations and stacked merge order. Attach it to the current Codex chat when that tool is available.
+Complete authorized commit/push/PR delivery, reusing matching PRs. Describe behavior, validation, limitations and stacked merge order; link Linear and attach the PR to the Codex chat when available. PR delivery does not authorize merge or release.
 
-After an authorized merge, verify PR state, update issue status and synchronize the local base. Inspect newer commits and local changes before lifecycle cleanup; squash merges need content-specific proof, not a guess from the merged label. Use conservative worktree cleanup for a requested broader sweep.
+After authorized merge, verify PR state, update Linear and synchronize the base. Cleanup must preserve newer/local work; a squash-merge label alone is insufficient integration proof. Use installed `clean-worktrees` for requested sweeps.
 
-If Linear tools are unavailable, report what tracking cannot be done and continue independent authorized local preparation. Do not claim transitions or links were written. Do not require a Linear issue for an operational release unless the destination project's policy requires it.
+Use this as the single delivery workflow; do not also run `project-workflow`. If Linear is unavailable, report missing tracking and continue independent work. Operational releases need issues only when project policy requires them.

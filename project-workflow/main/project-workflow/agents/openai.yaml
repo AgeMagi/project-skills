@@ -1,4 +1,4 @@
 interface:
   display_name: "Project Workflow"
-  short_description: "Carry an authorized project change from scope and implementat..."
-  default_prompt: "Use $project-workflow for the requested work in this project."
+  short_description: "Deliver scoped changes through verification and PR delivery"
+  default_prompt: "Use $project-workflow to implement, verify and deliver the requested project change."

@@ -1,18 +1,18 @@
 ---
 name: project-workflow
-description: "Carry an authorized project change from scope and implementation through verification and agreed delivery. Use for project work without requiring a specific tracker, stack or repository helper."
+description: "Implement, verify and deliver scoped project changes. Use linear-task-workflow for Linear-specific delivery."
 ---
 
 # Project workflow
 
-Inspect current checkout and local changes. Read applicable project instructions and the documents that own the requested behavior. Identify the existing tracker, default branch, tooling, checks and delivery convention; do not invent a backlog or impose Linear on a project that does not use it.
+Discover project instructions, owning contracts, local changes, tracker, base branch and delivery gates. Use the existing tracker without inventing a parallel backlog. Reuse matching issues, branches, worktrees and PRs; isolate work when needed. Keep tracked scope, dependencies and status accurate.
 
-Reuse an existing issue, branch, worktree and PR when they match the request. Use an isolated checkout when required or when shared work makes isolation useful. For tracked work, keep scope, dependency links and status aligned with actual progress. Do not pretend blocked prerequisites shipped.
+Use installed `linear-task-workflow` for Linear delivery instead of running both workflows. Load `review-fix-pr-frontend` or `review-fix-pr-backend` for requested review or material risk.
 
-State the intended observable result, preservation scope and necessary verification. Implement with a focused inner loop. Update the durable behavior/API/design/workflow document in the same change when its contract changes. Run the relevant final gate once inputs stabilize; widen checks for new failures or material risk.
+Establish the result and preserved behavior. Implement scoped changes, update changed contracts and run focused checks, then required gates once stable. Widen checks for new failures or material risk. Inspect the final diff and stage only scoped work.
 
-Inspect the final diff and stage only scoped changes. Complete the requested delivery within existing authorization. If a PR is authorized, describe the final problem/behavior and actual validation, update an existing PR when appropriate and link its issue. A draft or failed gate remains unfinished; a verified ready PR is ready for review. A PR request does not authorize merge or deployment.
+Complete authorized delivery. PRs describe the final behavior, validation and limitations, link their issue and attach to the Codex chat when available. Drafts and failed gates remain unfinished. PR delivery does not authorize merge or deployment.
 
-After an authorized merge, verify the remote PR state and synchronize the local base without discarding local work. Remove only the settled checkout when requested or covered by the project's agreed lifecycle, preserving newer commits, locks and unrelated files. Keep branch recovery pointers unless deletion was requested.
+After authorized merge, verify remote state and synchronize the base without discarding local work. Cleanup only when requested or covered by project lifecycle; preserve newer commits, locks and unrelated files. Retain branch recovery refs unless deletion is authorized. Use installed `clean-worktrees` for requested sweeps.
 
-Report outcome, remaining work, checks run, limitations and PR/issue links when present. Missing tools or credentials limit their dependent action, not independent local work.
+Report outcome, checks, remaining work and links. Missing tools block only dependent actions.

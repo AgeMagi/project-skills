@@ -1,4 +1,4 @@
 interface:
   display_name: "Firebase Distribution"
-  short_description: "Build and upload an explicitly requested Firebase App Distrib..."
-  default_prompt: "Use $firebase-distribution for the requested work in this project."
+  short_description: "Build and distribute an authorized Firebase tester release"
+  default_prompt: "Use $firebase-distribution to build and upload the requested tester release to its confirmed app and audience."
