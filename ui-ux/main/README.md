@@ -20,7 +20,7 @@ Ordinary UI work uses only the primary skill. Activate a supporting skill when t
 
 The main set keeps one canonical UI catalog and script bundle. UI screen imagery and identity artifacts remain distinct because they produce different deliverables. Provider-specific generators, duplicated CLI distributions, generic output enforcement, and unrelated presentation tooling are not part of the main set.
 
-Each skill folder is self-contained and can be copied independently. Local search uses Python 3 with no third-party Python packages. No runtime scripts need the neighboring repositories. The existing research and reference-matching skills from the reusable-project package are preserved. Overlapping copies of `design-taste-frontend`, `redesign-existing-projects`, and `ui-ux-pro-max` are preserved under `ui-ux/alternatives/`, outside the active main set. The original clones remain intact under `ui-ux/`.
+Each skill folder is self-contained and can be copied on its own. Local search needs only Python 3's standard library. Older overlapping skills (`design-taste-frontend`, `redesign-existing-projects`, `ui-ux-pro-max`) are kept under `ui-ux/alternatives/` and are not part of the main set. Upstream clones are gitignored local checkouts used only for maintenance.
 
 ## Use from this workspace
 
@@ -28,7 +28,7 @@ Ask the agent to use the desired `SKILL.md` by path, for example:
 
 > Use `ui-ux/main/ui-ux-design/SKILL.md` to improve this dashboard.
 
-If installed in a skill-discovery directory later, the names are `$ui-ux-design`, `$ui-ux-visual-reference`, and `$brand-identity`. **This task prepares the folders; it does not install them globally.** Keep only the curated entrypoints active when using this main set, so agents do not simultaneously load every upstream variant.
+Once installed, invoke them as `$ui-ux-design`, `$ui-ux-visual-reference` and `$brand-identity`. Install only these curated skills, not the alternatives or upstream variants, so agents don't load competing instructions.
 
 The root `catalog.json` and copy helper include all five main UI/UX skills. From the workspace root, preview with `python3 scripts/copy_skills.py --project /absolute/project --use-cases ui-ux`, then add `--apply` when ready to copy into that project.
 

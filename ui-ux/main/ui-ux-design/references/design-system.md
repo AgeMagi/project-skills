@@ -19,7 +19,7 @@ Specify component states where relevant: default, hover, focus, pressed, selecte
 
 ## `DESIGN.md` handoff
 
-Taste's Stitch workflow contributes a useful semantic format. A handoff can contain:
+A handoff can contain:
 
 1. **Intent and atmosphere:** audience, main action, density, composition, and why.
 2. **Palette and roles:** descriptive names, exact approved values, on-color pairs, themes.
@@ -29,6 +29,6 @@ Taste's Stitch workflow contributes a useful semantic format. A handoff can cont
 6. **Interaction:** motion purpose, timing tokens, keyboard/touch, reduced motion.
 7. **Project constraints:** observed decisions and specific patterns to avoid.
 
-Explain meaning as well as values. This is a portable Markdown handoff and does not require a Google Stitch account. Only operate Stitch or export into it when requested and available.
+Explain meaning as well as values. It's plain Markdown; use Google Stitch only when asked and available.
 
 Third-party brand analyses are inspiration; do not paste an entire analysis over an established project specification. Extract selected ideas, adapt them to the user's identity, and record the resulting decisions.

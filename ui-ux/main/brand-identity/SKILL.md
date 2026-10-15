@@ -1,22 +1,20 @@
 ---
 name: brand-identity
-description: Create or refine brand identities, logo concepts, brand guidelines, brand-kit boards, and standalone branded campaign assets such as banners. Combines local logo and corporate-identity catalogs with cohesive visual-board direction. Use for identity or branded asset deliverables; ordinary interface styling and UI screen comps belong to their interface skills.
+description: Create or refine brand identities, logos, brand guidelines, brand-kit boards and standalone campaign assets such as banners. Not for interface styling or UI screen comps.
 license: MIT; upstream notices in licenses/
 ---
 
 # Brand Identity
 
-Combines Taste's brand-kit art direction with UI UX Pro Max's brand, logo, corporate identity, and banner workflows. Identity strategy, reusable rules, and identity applications are this skill's outputs; it does not prescribe a frontend framework or slide generator.
+## 1. Establish or keep the identity
 
-## Establish or preserve identity
+Read supplied logos, guidelines, palette, fonts, references and the requested deliverables. For a new identity, define category, audience, promise, personality and a visual metaphor. For a campaign asset or consistency review, reuse the existing identity; don't invent a new logo.
 
-Read supplied logos, guidelines, palette, typography, reference materials, and the requested deliverables. For a new identity, infer category, audience, promise, personality, and a meaningful visual metaphor. For a campaign asset or consistency review, reuse the existing identity instead of inventing a new logo.
+Specify only useful rules: color roles and values, licensed font roles, logo variants and clear space, imagery, voice, sample applications. Keep proposals separate from the accepted identity. Never override an established brand because a catalog suggests something else.
 
-Specify only useful rules: approved color roles and values, available/licensed font roles, logo variants/clear space, imagery, voice, and representative applications. Separate proposed concepts from accepted identity. Do not overwrite an established brand simply because a catalog suggests another palette.
+## 2. Search the local catalogs
 
-## Local logo and identity search
-
-Resolve `SKILL_DIR` to the absolute directory containing this file. The bundled read-only searches require Python 3 and the standard library:
+`SKILL_DIR` is the absolute directory of this file. Python 3, standard library only:
 
 ```bash
 python3 "${SKILL_DIR}/scripts/logo/search.py" "technology precise modern" --design-brief -p "Brand Name"
@@ -25,22 +23,22 @@ python3 "${SKILL_DIR}/scripts/cip/search.py" "business card letterhead" --domain
 python3 "${SKILL_DIR}/scripts/cip/search.py" "consulting professional" --cip-brief -b "Brand Name" --json
 ```
 
-Logo domains: `style`, `color`, `industry`. Corporate identity domains: `deliverable`, `style`, `industry`, `mockup`. Use relevant matches as candidates, not automatic brand decisions. Narrow an empty/mismatched query once; identify general judgment as fallback if no applicable match remains. Catalog formats/dimensions are starting points and need verification for current publishing or production requirements.
+Logo domains: `style`, `color`, `industry`. Identity domains: `deliverable`, `style`, `industry`, `mockup`. Results are candidates. Retry a poor query once, narrower; then use your own judgment and say so. Check catalog formats and sizes against current requirements.
 
-## Choose the artifact
+## 3. Make the deliverable
 
-| Deliverable | Guidance |
+| Deliverable | Do |
 |---|---|
-| Logo direction | Develop a simple meaningful mark: monogram, product action, metaphor fusion, negative space, or construction geometry. Reduce complexity and inspect small-size/monochrome behavior. |
-| Guidelines | Document identity and voice in the requested format, with actual approved values and examples; reuse project documentation conventions. |
-| Brand-kit overview image | Read [brand-boards.md](references/brand-boards.md). |
-| Stationery, packaging, identity applications | Search the requested deliverables; carry one identity across them. A mockup depicts an application, not a production file. |
-| Standalone banner/social asset | Read [campaign-assets.md](references/campaign-assets.md); do not create a full brand program unless requested. |
+| Logo | One simple, meaningful idea: monogram, product action, metaphor, negative space or construction geometry. Check it small and in one color. |
+| Guidelines | Document identity and voice with real values and examples, in the project's doc format. |
+| Brand-kit board | Read [brand-boards.md](references/brand-boards.md). |
+| Stationery, packaging, applications | Search the deliverables and carry one identity across them. A mockup is not a production file. |
+| Banner or social asset | Read [campaign-assets.md](references/campaign-assets.md). Don't build a whole brand program unless asked. |
 
-Use the runtime's image-generation capability when a bitmap concept is needed. Use appropriate vector/code tools when the requested deliverable is an editable SVG or another code-native artifact. A raster concept is not a vector master; do not claim vector quality or production readiness from a generated board.
+Use the runtime's image generation for bitmap concepts and vector/code tools for editable SVG or code assets. A raster concept is not a vector master or production-ready.
 
-## Verify and deliver
+## 4. Verify and deliver
 
-Check logo consistency, legibility, contrast, palette, type availability, and coherent application. Use supplied identity assets without distortion. Do not imitate a reference brand's exact mark or pretend concept applications demonstrate real customers.
+Check logo consistency, legibility, contrast, palette, font availability and coherent application. Never distort supplied assets, copy a reference brand's mark, or imply concept mockups show real customers.
 
-For exported assets, inspect actual dimensions, cropping, font loading, and the final file. Distinguish generated concepts, editable source, and production output. Deliver the requested formats and identify missing exports honestly. Use the project's file conventions rather than requiring a universal `assets/design-tokens.json` or provider-specific setup.
+For exports, check actual dimensions, crop, font loading and the final file. Label each output as concept, editable source or production file, and name any missing formats. Follow the project's file conventions.

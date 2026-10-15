@@ -1,6 +1,6 @@
 # Art direction and visual judgment
 
-Adapted from Taste's frontend, minimalist, soft, industrial, and redesign guidance. These are contextual design choices, not universal prohibitions.
+Contextual choices, not rules. Pick what fits the brief.
 
 ## Composition
 

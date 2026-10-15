@@ -48,4 +48,4 @@ The tool writes generated recommendations, not the final adjudicated design. Edi
 
 ## Catalog integrity
 
-`python3 "${SKILL_DIR}/scripts/validate_data.py"` checks the vendored data contracts. Catalog snapshots, licenses, and provenance JSON are bundled in `data/`. Upstream includes active, supplemental, and deprecated style records; search behavior handles that taxonomy. Do not load every CSV into context.
+`python3 "${SKILL_DIR}/scripts/validate_data.py"` checks the bundled data in `data/`. Search already handles deprecated style records. Never load the CSVs into context.

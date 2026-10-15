@@ -1,14 +1,13 @@
 ---
 name: research-ui-ux
-description: "Research UI and UX conventions or supplied references, record evidence, and turn findings into a scoped design brief. Use before design decisions; research alone does not authorize implementation."
+description: "Research UI/UX conventions or supplied references and turn the evidence into a scoped design brief. Use before design decisions; research alone doesn't authorize implementation."
 ---
 
 # Research UI/UX
 
-Establish the target users, task, platform, surface and decision the research should answer. Read existing product and design guidance only as relevant. Preserve the user's scope and brand.
+1. **Frame the question.** Name the users, task, platform, surface and the decision the research must inform. Read existing product and design guidance as needed. Keep the user's scope and brand.
+2. **Gather evidence.** Prefer interfaces you can observe directly, official design guidance and documented behavior. Record source URLs, access dates, platform/version and states observed. Label each point as fact, observation, inference or unknown. Never claim to have seen an interface you couldn't inspect.
+3. **Compare.** Look at a few relevant examples for task completion, hierarchy, navigation, content pressure, accessibility and loading/empty/error states. Extract conventions and tradeoffs; don't copy a competitor's assets or behavior, and don't turn a style preference into a requirement.
+4. **Write the brief.** Problem, evidence, proposed layout and interaction, constraints, states to cover and acceptance criteria. Keep optional ideas separate. Save it in the project's design-doc location only if the user wants it kept.
 
-Use available browsing tools for public research when needed. Prefer directly observable interfaces, official design guidance and documented behavior. Record source URLs, access dates, target platform/version and states observed. Distinguish published facts, observation, inference and unknowns. Never claim access to an interface you could not inspect.
-
-Compare a few relevant examples on task completion, hierarchy, navigation, content pressure, accessibility and loading/error/empty states. Extract conventions and tradeoffs rather than copying a competitor's assets or product behavior. Do not turn a style preference into a universal requirement.
-
-Produce a compact brief: problem, evidence, proposed layout/interaction, constraints, states to cover and acceptance criteria. Keep optional changes separate. Use the destination project's existing design-document location if the user requests durable documentation. Continue implementation only when it falls within the user's request; research-only ends with findings.
+Implement only if the request includes it; otherwise stop at the findings.

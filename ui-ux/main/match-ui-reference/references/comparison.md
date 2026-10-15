@@ -133,8 +133,9 @@ In that case:
 1. Keep the required overlay and container edges visible in the scoped
    simulator and reference images.
 2. Record the relevant bounds or insets from the reference.
-3. Add or run a focused Flutter geometry/property assertion for the runtime
-   layout using stable keys, or use a deterministic bounds calculation when the
+3. Add or run a focused geometry/property assertion for the runtime layout
+   (for example a Flutter widget test with stable keys, or a browser test
+   reading element bounds), or use a deterministic bounds calculation when the
    feature can be isolated from the captures.
 4. Prove the assertion detects a small regression, then restore the intended
    value.
