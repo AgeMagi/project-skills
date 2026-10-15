@@ -16,10 +16,12 @@ python3 <skill-dir>/scripts/clean_worktrees.py --apply   # only when asked
 
 Preview uses the cached remote ref, so it may keep stale entries. `--apply` fetches the base first and stops on any fetch, ancestry or GitHub failure. Use `--base` if the remote HEAD is unavailable; `--remote` selects both the base and the GitHub repository. Removal is plain `git worktree remove`: no lock is overridden, local branches stay as recovery refs, remote branches are untouched. Branched candidates need GitHub CLI access.
 
+`--allow-ignored` (opt-in, for build-heavy repos) lets worktrees whose only extra files are ignored build output (`node_modules/`, `build/`, `target/`) go, listing the ignored paths that would be lost; untracked or modified files, and ignored secret- or config-like files (`.env*`, `*.pem`, `*.key`, credentials), still keep the worktree.
+
 ## Rules
 
 - Never `--apply` unless asked: not after a merge, not as end-of-task tidying. Show the preview first unless the user already said to just do it.
 - Check for active sessions before applying; the helper cannot detect them. Run from the main checkout or a worktree not due for removal.
 - Don't `git worktree remove` by hand to override a keep; resolve why it was kept.
-- Squash-merged work without ancestry proof stays. Abandoning unmerged or ignored-file work needs its contents shown and separate authorization.
+- Squash-merged work without ancestry proof stays. Abandoning unmerged, unignored or kept-ignored work needs its contents shown and separate authorization.
 - Report removed and kept paths with reasons.
