@@ -138,6 +138,63 @@ class CleanupTests(unittest.TestCase):
         self.assertEqual((path / 'private.txt').read_text(), 'retain this file')
         self.assertIn('uncommitted or ignored files', output)
 
+    def build_output_candidate(self):
+        (self.repo / '.gitignore').write_text('build/\n.env\n')
+        self.git('add', '.gitignore')
+        self.git('commit', '-m', 'ignore build output')
+        self.git('push', 'origin', 'main')
+        path = self.candidate('candidate')
+        (path / 'build').mkdir()
+        (path / 'build' / 'app.js').write_text('generated')
+        return path
+
+    def test_ignored_build_output_kept_by_default(self):
+        path = self.build_output_candidate()
+        output = self.invoke()
+        self.assertIn('KEEP', output)
+        self.assertIn('uncommitted or ignored files', output)
+        self.invoke('--apply')
+        self.assertTrue((path / 'build' / 'app.js').is_file())
+
+    def test_allow_ignored_previews_lost_paths_then_removes(self):
+        path = self.build_output_candidate()
+        output = self.invoke('--allow-ignored')
+        self.assertIn(f'ELIGIBLE {path.resolve()}', output)
+        self.assertIn('ignored files lost: build/', output)
+        self.assertTrue(path.is_dir())
+        output = self.invoke('--apply', '--allow-ignored')
+        self.assertIn('REMOVED', output)
+        self.assertFalse(path.exists())
+
+    def test_allow_ignored_keeps_local_secrets(self):
+        path = self.build_output_candidate()
+        (path / '.env').write_text('TOKEN=retain')
+        output = self.invoke('--apply', '--allow-ignored')
+        self.assertIn('ignored local secrets or config: .env', output)
+        self.assertEqual((path / '.env').read_text(), 'TOKEN=retain')
+
+    def test_allow_ignored_still_keeps_untracked_files(self):
+        path = self.build_output_candidate()
+        (path / 'notes.txt').write_text('unignored work')
+        output = self.invoke('--apply', '--allow-ignored')
+        self.assertIn('uncommitted or ignored files', output)
+        self.assertTrue((path / 'notes.txt').is_file())
+
+    def test_allow_ignored_reverifies_before_removal(self):
+        path = self.build_output_candidate()
+        calls = []
+
+        def fake(command):
+            if command[:4] == ('git', '-C', str(path.resolve()), 'status') and '--untracked-files=all' in command:
+                calls.append(command)
+                if len(calls) == 2:  # re-verification just before removal
+                    (path / '.env').write_text('TOKEN=late')
+            return None
+
+        with self.assertRaises(RuntimeError):
+            self.invoke('--apply', '--allow-ignored', fake_run=fake)
+        self.assertEqual((path / '.env').read_text(), 'TOKEN=late')
+
 
 if __name__ == '__main__':
     unittest.main()

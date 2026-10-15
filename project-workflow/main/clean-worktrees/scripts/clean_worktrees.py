@@ -27,11 +27,53 @@ def github_repository(remote):
     return f'{parsed.hostname}/{parts[0]}/{parts[1]}'
 
 
+# Ignored files that may be the only copy of local secrets or machine config.
+SECRET_NAME = re.compile(
+    r'\.env(\..*)?|.*\.(pem|key|p12|pfx|p8|jks|keystore|tfvars|tfstate)'
+    r'|(credentials?|secrets?)(\.(json|ya?ml|toml|ini|txt|xml|plist|properties))?'
+    r'|.*service[-_]?account.*\.json|client_secret.*\.json|id_(rsa|dsa|ecdsa|ed25519)'
+    r'|\.(npmrc|netrc|pypirc)|key\.properties|google-services\.json|googleservice-info\.plist',
+    re.IGNORECASE)
+
+
+def worktree_status(path, untracked='all'):
+    """Split porcelain status into unignored changes and ignored paths."""
+    changes, ignored = [], []
+    fields = iter(run('git', '-C', path, 'status', '--porcelain', '-z',
+                      f'--untracked-files={untracked}', '--ignored').split('\0'))
+    for field in fields:
+        if field.startswith('!! '):
+            ignored.append(field[3:])
+        elif field:
+            changes.append(field)
+            if field.lstrip()[:1] in ('R', 'C'):
+                next(fields, None)  # rename/copy source path
+    return changes, ignored
+
+
+def keep_reason(path, allow_ignored):
+    changes, ignored = worktree_status(path)
+    if changes or (ignored and not allow_ignored):
+        return 'uncommitted or ignored files'
+    secrets = [name for name in ignored if SECRET_NAME.fullmatch(Path(name.rstrip('/')).name)]
+    if secrets:
+        return f'ignored local secrets or config: {summarize(secrets)}'
+    return None
+
+
+def summarize(paths, limit=8):
+    shown = ', '.join(paths[:limit])
+    return shown + (f' (+{len(paths) - limit} more)' if len(paths) > limit else '')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--apply', action='store_true', help='refresh then remove eligible worktrees')
     parser.add_argument('--remote', default='origin', help='remote to compare against')
     parser.add_argument('--base', help='explicit base branch if remote HEAD is unavailable')
+    parser.add_argument('--allow-ignored', action='store_true',
+                        help='remove worktrees whose only extra files are ignored build output; '
+                             'secret- or config-like ignored files still keep them')
     args = parser.parse_args()
     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]*', args.remote):
         parser.error('remote must be a simple remote name')
@@ -65,8 +107,8 @@ def main():
             reason = 'locked'
         elif not Path(path).is_dir():
             reason = 'missing path; inspect registration manually'
-        elif run('git', '-C', path, 'status', '--porcelain', '--untracked-files=all', '--ignored'):
-            reason = 'uncommitted or ignored files'
+        elif status_reason := keep_reason(path, args.allow_ignored):
+            reason = status_reason
         else:
             ancestry = subprocess.run(['git', 'merge-base', '--is-ancestor', fields['HEAD'], base_sha])
             if ancestry.returncode == 1:
@@ -82,18 +124,21 @@ def main():
                     reason = 'open PR'
                 elif not merged:
                     reason = 'no verified merged PR'
-        decisions.append((path, fields['HEAD'], reason))
+        # Collapsed listing (whole ignored directories) of what removal deletes.
+        lost = worktree_status(path, 'normal')[1] if not reason and args.allow_ignored else []
+        decisions.append((path, fields['HEAD'], reason, lost))
     # Resolve every remote query before deleting anything; API failures fail closed.
-    for path, expected_head, reason in decisions:
+    for path, expected_head, reason, lost in decisions:
+        loses = f'; ignored files lost: {summarize(lost)}' if lost else ''
         if reason:
             print(f'KEEP {path}: {reason}')
         elif not args.apply:
-            print(f'ELIGIBLE {path}: integrated; preview only')
+            print(f'ELIGIBLE {path}: integrated; preview only{loses}')
         else:
-            if run('git', '-C', path, 'rev-parse', 'HEAD') != expected_head or run('git', '-C', path, 'status', '--porcelain', '--untracked-files=all', '--ignored'):
+            if run('git', '-C', path, 'rev-parse', 'HEAD') != expected_head or keep_reason(path, args.allow_ignored):
                 raise RuntimeError(f'{path} changed during cleanup; stopping')
             subprocess.run(['git', 'worktree', 'remove', path], check=True)
-            print(f'REMOVED {path}; branch retained')
+            print(f'REMOVED {path}; branch retained{loses}')
 
 
 if __name__ == '__main__':
