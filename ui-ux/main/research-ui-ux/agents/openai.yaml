@@ -1,4 +1,4 @@
 interface:
-  display_name: "Research Ui Ux"
-  short_description: "Research UI and UX conventions or supplied references, record..."
-  default_prompt: "Use $research-ui-ux for the requested work in this project."
+  display_name: "Research UI/UX"
+  short_description: "Research UI/UX conventions into an evidence-backed brief"
+  default_prompt: "Use $research-ui-ux to research this UI/UX question and produce an evidence-backed brief."

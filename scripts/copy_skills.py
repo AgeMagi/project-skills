@@ -24,7 +24,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--project', required=True, type=Path, help='existing destination project')
     parser.add_argument('--use-cases', nargs='+', choices=categories, help='default: all cataloged use cases')
-    parser.add_argument('--target', choices=['agents', 'claude'], default='agents')
+    parser.add_argument('--target', choices=['claude', 'agents'], default='claude',
+                        help='claude: .claude/skills (default); agents: .agents/skills')
     parser.add_argument('--apply', action='store_true', help='copy after a successful conflict check')
     args = parser.parse_args()
     project = args.project.expanduser().resolve()

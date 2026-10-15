@@ -1,4 +1,4 @@
 interface:
-  display_name: "Match Ui Reference"
-  short_description: "Implement or compare UI against supplied visual references us..."
-  default_prompt: "Use $match-ui-reference for the requested work in this project."
+  display_name: "Match UI Reference"
+  short_description: "Implement UI to match references with runtime captures"
+  default_prompt: "Use $match-ui-reference to implement or compare this UI against the supplied reference using real runtime captures."
