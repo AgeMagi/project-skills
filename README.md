@@ -22,7 +22,22 @@ Keep `scripts` for the copy helper. Root files such as `catalog.json` and this R
 
 ## Install into a project
 
-For Codex, install individual skill directories into `.agents/skills/`. For Claude Code, use `.claude/skills/`. **Install the directories inside `main/`, including their contents; do not install the use-case or `main` wrapper.** Alternatives and upstream source libraries are not needed.
+Install individual skill directories into `.claude/skills/` and keep that as the only real copy. Codex reads the same files through a symlink, so there is no mirror to sync:
+
+```text
+.claude/skills/                       ← real skills (edit here)
+.agents/skills → ../.claude/skills    ← Codex
+CLAUDE.md                             ← real instructions
+AGENTS.md → CLAUDE.md
+```
+
+Create the links once from the project root:
+
+```sh
+mkdir -p .agents && ln -s ../.claude/skills .agents/skills && ln -s CLAUDE.md AGENTS.md
+```
+
+**Install the directories inside `main/`, including their contents; do not install the use-case or `main` wrapper.** Alternatives and upstream source libraries are not needed.
 
 From the cloned library, preview the selected use cases:
 
@@ -38,20 +53,20 @@ python3 scripts/copy_skills.py --project /absolute/path/my-project --use-cases r
 
 The destination project must already exist. The helper checks conflicts before copying, skips identical skills and refuses to overwrite differing ones. It copies only cataloged skills under `main/`; it does not install dependencies or modify project instructions.
 
-- Add `--target claude` for `.claude/skills/`.
+- Skills go to `.claude/skills/` by default; add `--target agents` for a Codex-only project without the symlink.
 - Omit `--use-cases` to install all 12 skills; all five `main/` directories must be checked out.
 - Available use cases: `ui-ux`, `review`, `project-workflow`, `mobile`, `release`.
 
 For a single skill, copy its complete directory. This example installs only the primary UI skill and refuses an existing destination:
 
 ```sh
-python3 -c 'import shutil; shutil.copytree("ui-ux/main/ui-ux-design", "/absolute/path/my-project/.agents/skills/ui-ux-design")'
+python3 -c 'import shutil; shutil.copytree("ui-ux/main/ui-ux-design", "/absolute/path/my-project/.claude/skills/ui-ux-design")'
 ```
 
 The installed layout should look like this:
 
 ```text
-my-project/.agents/skills/
+my-project/.claude/skills/
 ├── review-fix-pr-frontend/
 │   ├── SKILL.md
 │   ├── agents/
@@ -60,7 +75,7 @@ my-project/.agents/skills/
 └── project-workflow/
 ```
 
-If your project generates Claude mirrors from `.agents/skills/`, install there and use its existing sync procedure.
+If an older project still keeps separate `.agents/skills/` and `.claude/skills/` copies, replace the mirror with the symlink above rather than syncing two copies.
 
 ## Choose skills by use case
 
