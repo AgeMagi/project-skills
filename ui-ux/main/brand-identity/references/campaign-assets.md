@@ -2,7 +2,7 @@
 
 Identify purpose, platform/placement, dimensions, final copy, supplied identity, and number of requested variants. Fill reasonable design choices from context. Ask only about missing information that materially affects the result; do not require a multi-question intake for a clear brief.
 
-Verify current placement dimensions, safe-zone crops, and file constraints against the target's official specification when necessary. Upstream static dimension tables and the historical blanket rule about Meta's 20% text penalty are not reliable universal publishing requirements. Do not apply a fixed central-70% safe zone to every placement.
+Check placement dimensions, safe-zone crops and file limits against the platform's current official spec. Don't rely on fixed dimension tables, the retired 20% text rule, or one central-70% safe zone for every placement.
 
 Choose composition around the message and crop behavior. Keep a clear hierarchy and an intentional primary action where one belongs. Use supplied assets, code-built type/geometry, or generated backgrounds/illustrations as appropriate. Keep final copy editable when producing HTML/CSS or another editable format; generated imagery should not be the sole source of critical lettering.
 

@@ -1,37 +1,37 @@
 ---
 name: ui-ux-design
-description: Design, implement, review, and improve web, mobile, and desktop interfaces. Combines searchable UX and stack guidance with intentional art direction, design tokens, and preservation-aware redesign. Use for pages, components, interaction, accessibility, and interface design systems; use a visual-reference skill for raster comps and a brand-identity skill for creating logos or brand kits.
+description: Design, build, review or improve web, mobile and desktop interfaces: pages, components, interaction, accessibility and design systems. Use ui-ux-visual-reference for image comps and brand-identity for logos or brand kits.
 license: MIT; upstream notices in licenses/
 ---
 
 # UI/UX Design
 
-Use this as the primary interface skill. It combines UI UX Pro Max's local search engine, Taste's visual and redesign judgment, and selected Awesome DESIGN.md analyses. Load supporting material only for the current task.
+The primary interface skill. Load only the references the task needs.
 
-## Establish the direction
+## 1. Read the context
 
-Read the brief, relevant project instructions, existing UI, dependencies, brand assets, and any `DESIGN.md` or design-system master/page overrides. Identify the surface, audience, main action, platform, and implementation stack. Preserve the project's established conventions unless the requested change requires otherwise.
+Read the brief, project instructions, existing UI, dependencies, brand assets, and any `DESIGN.md` or design-system files. Identify the surface, audience, main action, platform and stack. Keep the project's conventions unless the request changes them.
 
-The user's brief and accepted project design take precedence over catalogs and aesthetic presets. Treat all retrieved recommendations as candidates. Accessibility and working interactions remain requirements when adapting a reference. A brand-inspired surface can use its requested colors, fonts, centered layouts, and contrasting sections; there are no blanket bans on those choices.
+The brief and the project's accepted design beat catalogs and presets. Search results are candidates, not decisions. There are no blanket bans on fonts, colors or layouts, but accessibility and working interactions are always required.
 
-For a new visual direction, state a short design read: mood, hierarchy, layout, density, and motion. Optional variance/motion/density dials run from 1–10; infer them from the task rather than applying a universal high-motion preset. Product dashboards usually need stable structure and efficient density; marketing pages can support more composition variety. Do not add cinematic motion or image generation to routine component fixes.
+For a new visual direction, state a short design read first: mood, hierarchy, layout, density, motion. Dashboards want stable structure and efficient density; marketing pages can vary more. Don't add cinematic motion or image generation to routine fixes.
 
-## Choose the relevant mode
+## 2. Pick the mode
 
-| Task | Load and use |
+| Task | Read |
 |---|---|
-| New interface or substantial visual direction | [search-guide.md](references/search-guide.md), then [art-direction.md](references/art-direction.md) |
-| Focused interaction, accessibility, or layout issue | One relevant domain search; a separate detected-stack search if needed |
-| Existing interface redesign | [redesign.md](references/redesign.md); apply art direction to the requested surfaces |
-| Named brand inspiration | [brand-library.md](references/brand-library.md); read the selected analysis only |
-| Tokens or `DESIGN.md` handoff | [design-system.md](references/design-system.md) |
+| New interface or new visual direction | [search-guide.md](references/search-guide.md), then [art-direction.md](references/art-direction.md) |
+| Focused interaction, accessibility or layout issue | One domain search, plus a stack search if needed |
+| Redesign of an existing interface | [redesign.md](references/redesign.md) |
+| Named brand as inspiration | [brand-library.md](references/brand-library.md), then only that brand's file |
+| Tokens or a `DESIGN.md` handoff | [design-system.md](references/design-system.md) |
 | Delivery or review | [verification.md](references/verification.md) |
 
-Style variants such as minimalist, soft, editorial, and industrial are choices within this skill, not additional skills to activate together. The search catalog supplies further styles and platform guidance.
+Styles such as minimalist, soft, editorial or industrial are choices inside this skill. Pick one.
 
-## Search from the skill's own directory
+## 3. Search
 
-Resolve `SKILL_DIR` to the absolute directory containing this `SKILL.md`. Use the full script path, independent of the target project's working directory:
+`SKILL_DIR` is the absolute directory of this file. Run from anywhere with Python 3 (standard library only):
 
 ```bash
 python3 "${SKILL_DIR}/scripts/search.py" "analytics dashboard operational" --design-system --json
@@ -39,14 +39,14 @@ python3 "${SKILL_DIR}/scripts/search.py" "error summary validation" --domain ux 
 python3 "${SKILL_DIR}/scripts/search.py" "dialog focus restore" --stack react --json
 ```
 
-Requires Python 3 and the standard library. Do not install the upstream CLI or configure a provider just to use local search. Use the smallest appropriate query mode; detailed domains, persistence behavior, and dials are in the search guide.
+Check that the category, product and platform of the top result fit. If not, retry once with a narrower query; then fall back to your own judgment and say so. Catalog contrast claims don't replace checking the rendered UI.
 
-Check the returned category, product, platform, and top result before applying it. Retry an empty or mismatched search once with a narrower query. If still unsuitable, label general judgment as a fallback. Generated systems and catalog contrast claims do not replace inspecting the rendered interface.
+## 4. Build and verify
 
-## Implement and verify
+- Reuse existing components, tokens, icons and dependencies. Check installed versions before adding packages.
+- Keep copy editable and controls working. Cover loading, empty, error, disabled and success states.
+- Sample data must look like sample data; never fake testimonials, customers or metrics.
+- Respect framework boundaries, clean up listeners and animations, and keep continuous animation out of broad re-renders. Use CSS or the project's motion library; GSAP is optional.
+- Check representative widths, keyboard use and reduced motion, using [verification.md](references/verification.md).
 
-Use existing components, tokens, icon families, and dependencies where they fit. Verify imports and installed versions before adding packages. Keep visible copy editable, assets appropriate, and controls functional. Implement applicable loading, empty, error, disabled, and success states. Mock data must be recognizable as sample data; do not fabricate customer endorsements or product claims for realism.
-
-Keep a coherent token and component system. Match framework boundaries: isolate browser-only interaction where required, clean up animation/listener lifecycles, and keep continuous animation outside broad render-state updates. Choose CSS or a supported existing motion library according to the interaction; GSAP snippets are optional references, not a requirement to install GSAP.
-
-Inspect the result at representative widths and with keyboard/reduced-motion behavior. Apply the verification reference to the actual surface. Report what was implemented, what was checked, and any unverified behavior. Do not claim accessibility conformance, performance scores, or exact visual fidelity based only on a checklist.
+Report what was built, what was checked and what wasn't. Never claim accessibility conformance, performance scores or exact fidelity from a checklist alone.
