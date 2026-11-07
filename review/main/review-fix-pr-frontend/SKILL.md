@@ -59,4 +59,4 @@ Lead with the outcome. Then: fixes made; open findings by severity (P0 catastrop
 
 - Never weaken or delete a failing test, or regenerate goldens to hide unexplained drift.
 - Never slip an extension into a fix because it's small.
-- Deliver through `linear-task-workflow` or `project-workflow` (one, not both). Update an existing PR; open one only if asked. Review never authorizes merge or release.
+- Deliver through `linear-task-workflow`. Update an existing PR; open one only if asked. Review never authorizes merge or release.

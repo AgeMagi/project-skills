@@ -27,12 +27,6 @@
     },
     {
       "category": "project-workflow",
-      "name": "project-workflow",
-      "source": "Shared delivery conventions from both projects; project-specific constraints removed",
-      "path": "project-workflow/main/project-workflow"
-    },
-    {
-      "category": "project-workflow",
       "name": "linear-task-workflow",
       "source": "Merged portable workflow from both projects; no copied task.sh/Linear IDs",
       "path": "project-workflow/main/linear-task-workflow"

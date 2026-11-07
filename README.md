@@ -54,7 +54,7 @@ python3 scripts/copy_skills.py --project /absolute/path/my-project --use-cases r
 The destination project must already exist. The helper checks conflicts before copying, skips identical skills and refuses to overwrite differing ones. It copies only cataloged skills under `main/`; it does not install dependencies or modify project instructions.
 
 - Skills go to `.claude/skills/` by default; add `--target agents` for a Codex-only project without the symlink.
-- Omit `--use-cases` to install all 12 skills; all five `main/` directories must be checked out.
+- Omit `--use-cases` to install all 11 skills; all five `main/` directories must be checked out.
 - Available use cases: `ui-ux`, `review`, `project-workflow`, `mobile`, `release`.
 
 For a single skill, copy its complete directory. This example installs only the primary UI skill and refuses an existing destination:
@@ -72,7 +72,7 @@ my-project/.claude/skills/
 │   ├── agents/
 │   └── references/
 ├── review-fix-pr-backend/
-└── project-workflow/
+└── linear-task-workflow/
 ```
 
 If an older project still keeps separate `.agents/skills/` and `.claude/skills/` copies, replace the mirror with the symlink above rather than syncing two copies.
@@ -88,13 +88,12 @@ If an older project still keeps separate `.agents/skills/` and `.claude/skills/`
 | UI/UX | [brand-identity](ui-ux/main/brand-identity/SKILL.md) | Create logos, identity, brand boards and campaign assets |
 | Review | [review-fix-pr-frontend](review/main/review-fix-pr-frontend/SKILL.md) | Review web/Flutter changes and fix authorized defects |
 | Review | [review-fix-pr-backend](review/main/review-fix-pr-backend/SKILL.md) | Review API, auth, data, jobs and reliability changes |
-| Project workflow | [project-workflow](project-workflow/main/project-workflow/SKILL.md) | General scoped implementation, verification and delivery |
 | Project workflow | [linear-task-workflow](project-workflow/main/linear-task-workflow/SKILL.md) | Deliver work tracked in Linear |
 | Project workflow | [clean-worktrees](project-workflow/main/clean-worktrees/SKILL.md) | Preview or clean integrated worktrees on request |
 | Mobile | [add-simulated-app](mobile/main/add-simulated-app/SKILL.md) | Add a preview format to an existing simulation product |
 | Release | [firebase-distribution](release/main/firebase-distribution/SKILL.md) | Build and upload a requested Firebase tester release |
 
-Choose one delivery workflow: `linear-task-workflow` for Linear, otherwise `project-workflow`. For ordinary UI work, start with `ui-ux-design` and add specialists when their deliverable is needed. Mobile simulation and Firebase distribution are specialized; install them only for relevant projects.
+Deliver through `linear-task-workflow`; the general `project-workflow` skill is archived in `project-workflow/archive/`. For ordinary UI work, start with `ui-ux-design` and add specialists when their deliverable is needed. Mobile simulation and Firebase distribution are specialized; install them only for relevant projects.
 
 Example: “Use $review-fix-pr-frontend to review and fix this diff” or “Use $linear-task-workflow to deliver this issue.”
 
@@ -112,4 +111,4 @@ git pull --ff-only
 
 Preview copying again before applying. If an installed skill differs, review and reconcile it explicitly; the helper does not overwrite it automatically.
 
-`catalog.json` records the 12 installable skills and their origins. UI/UX resources are curated snapshots with bundled licenses; upstream checkouts are unnecessary. See [UI/UX review](ui-ux/main/REVIEW.md) and [provenance](ui-ux/main/provenance.json) for source versions and maintenance details.
+`catalog.json` records the 11 installable skills and their origins. UI/UX resources are curated snapshots with bundled licenses; upstream checkouts are unnecessary. See [UI/UX review](ui-ux/main/REVIEW.md) and [provenance](ui-ux/main/provenance.json) for source versions and maintenance details.

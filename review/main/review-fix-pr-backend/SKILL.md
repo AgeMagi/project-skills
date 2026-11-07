@@ -41,4 +41,4 @@ Lead with findings (review-only) or fixes and open findings. Give each a trigger
 
 - Never weaken tests to accept a regression.
 - Production migrations, backfills and data changes need explicit authorization.
-- Deliver through `linear-task-workflow` or `project-workflow` (one, not both). Review never authorizes merge, deploy or release.
+- Deliver through `linear-task-workflow`. Review never authorizes merge, deploy or release.

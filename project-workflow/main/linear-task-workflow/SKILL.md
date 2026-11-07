@@ -44,4 +44,3 @@ Only when the user drops the work; a closed PR can be reopened or replaced. Disc
 - One outcome per issue. Keep remote branches after merge.
 - A squash-merge label doesn't prove integration. Use `clean-worktrees` for requested sweeps.
 - Linear is the only backlog. If it's unreachable, say so and follow project policy on untracked work.
-- Don't also run `project-workflow`.
