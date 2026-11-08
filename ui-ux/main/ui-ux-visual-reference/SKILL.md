@@ -1,6 +1,6 @@
 ---
 name: ui-ux-visual-reference
-description: Generate website or mobile UI concept images and turn generated designs into an implementation handoff. Use only when new UI imagery is requested; use match-ui-reference for supplied references and brand-identity for identity boards.
+description: "Generate UI concept images (website or app screen comps, visual mockups rendered as images) and turn generated designs into an implementation handoff. Use only when new UI imagery is requested; supplied references go to match-ui-reference and identity boards to brand-identity."
 license: MIT; upstream notice in licenses/
 ---
 

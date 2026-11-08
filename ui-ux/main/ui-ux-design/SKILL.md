@@ -1,6 +1,6 @@
 ---
 name: ui-ux-design
-description: Design, build, review or improve web, mobile and desktop interfaces: pages, components, interaction, accessibility and design systems. Use ui-ux-visual-reference for image comps and brand-identity for logos or brand kits.
+description: "Use for any UI work: mockups, wireframes, screens, pages, components, dashboards, landing pages, forms, layout, styling, design canvases and design systems on web, mobile or desktop. Load it before designing or building UI, and again to review the result before calling it done. Image comps go to ui-ux-visual-reference; logos and brand kits to brand-identity."
 license: MIT; upstream notices in licenses/
 ---
 

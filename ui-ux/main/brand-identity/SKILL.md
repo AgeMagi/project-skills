@@ -1,6 +1,6 @@
 ---
 name: brand-identity
-description: Create or refine brand identities, logos, brand guidelines, brand-kit boards and standalone campaign assets such as banners. Not for interface styling or UI screen comps.
+description: "Create or refine brand identities: logos, brand guidelines, brand-kit boards, and standalone campaign assets such as banners, social posts and ads. Not for interface styling or UI screen comps."
 license: MIT; upstream notices in licenses/
 ---
 

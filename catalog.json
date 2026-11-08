@@ -2,16 +2,16 @@
   "version": 1,
   "skills": [
     {
-      "category": "review",
+      "category": "engineering",
       "name": "review-fix-pr-frontend",
       "source": "Adapted from both projects: .agents/skills/review-fix-pr-frontend",
-      "path": "review/main/review-fix-pr-frontend"
+      "path": "engineering/main/review-fix-pr-frontend"
     },
     {
-      "category": "review",
+      "category": "engineering",
       "name": "review-fix-pr-backend",
       "source": "New portable backend review, informed by autoon/backend/AGENTS.md and shared review scope",
-      "path": "review/main/review-fix-pr-backend"
+      "path": "engineering/main/review-fix-pr-backend"
     },
     {
       "category": "ui-ux",
@@ -26,28 +26,10 @@
       "path": "ui-ux/main/match-ui-reference"
     },
     {
-      "category": "project-workflow",
+      "category": "engineering",
       "name": "linear-task-workflow",
       "source": "Merged portable workflow from both projects; no copied task.sh/Linear IDs",
-      "path": "project-workflow/main/linear-task-workflow"
-    },
-    {
-      "category": "project-workflow",
-      "name": "clean-worktrees",
-      "source": "Safer autoon implementation selected over alternate-universe forced deletion",
-      "path": "project-workflow/main/clean-worktrees"
-    },
-    {
-      "category": "mobile",
-      "name": "add-simulated-app",
-      "source": "Generalized alternate-universe/.agents/skills/add-simulated-app",
-      "path": "mobile/main/add-simulated-app"
-    },
-    {
-      "category": "release",
-      "name": "firebase-distribution",
-      "source": "Generalized alternate-universe/.agents/skills/firebase-distribution; project script not copied",
-      "path": "release/main/firebase-distribution"
+      "path": "engineering/main/linear-task-workflow"
     },
     {
       "category": "ui-ux",
@@ -66,6 +48,60 @@
       "name": "brand-identity",
       "source": "Consolidated Taste brandkit and UI UX Pro Max brand/logo/CIP/banner workflows; local search/data retained",
       "path": "ui-ux/main/brand-identity"
+    },
+    {
+      "category": "engineering",
+      "name": "grilling",
+      "source": "Copied from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
+      "path": "engineering/main/grilling"
+    },
+    {
+      "category": "engineering",
+      "name": "domain-modeling",
+      "source": "Copied from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
+      "path": "engineering/main/domain-modeling"
+    },
+    {
+      "category": "engineering",
+      "name": "grill-with-docs",
+      "source": "Copied from mattpocock/skills@4ae2317 (MIT), reworded to work without Claude's Skill tool; see engineering/main/README.md",
+      "path": "engineering/main/grill-with-docs"
+    },
+    {
+      "category": "engineering",
+      "name": "to-tickets",
+      "source": "Copied from mattpocock/skills@4ae2317 (MIT), made tracker-neutral without setup-matt-pocock-skills; see engineering/main/README.md",
+      "path": "engineering/main/to-tickets"
+    },
+    {
+      "category": "engineering",
+      "name": "tdd",
+      "source": "Copied from mattpocock/skills@4ae2317 (MIT), review/Skill-tool references made portable; see engineering/main/README.md",
+      "path": "engineering/main/tdd"
+    },
+    {
+      "category": "engineering",
+      "name": "codebase-design",
+      "source": "Copied from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
+      "path": "engineering/main/codebase-design"
+    },
+    {
+      "category": "engineering",
+      "name": "diagnosing-bugs",
+      "source": "Copied unchanged from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
+      "path": "engineering/main/diagnosing-bugs"
+    },
+    {
+      "category": "engineering",
+      "name": "prototype",
+      "source": "Copied unchanged from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
+      "path": "engineering/main/prototype"
+    },
+    {
+      "category": "engineering",
+      "name": "research",
+      "source": "Copied unchanged from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
+      "path": "engineering/main/research"
     }
   ]
 }

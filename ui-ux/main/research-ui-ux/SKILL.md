@@ -1,6 +1,6 @@
 ---
 name: research-ui-ux
-description: "Research UI/UX conventions or supplied references and turn the evidence into a scoped design brief. Use before design decisions; research alone doesn't authorize implementation."
+description: "Research UI/UX conventions, competitors or supplied references and turn the evidence into a scoped design brief. Use before a design decision, or when asked how other products handle a screen or flow. Research alone doesn't authorize implementation."
 ---
 
 # Research UI/UX

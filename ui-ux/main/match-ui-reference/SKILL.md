@@ -1,6 +1,6 @@
 ---
 name: match-ui-reference
-description: "Implement or check UI against supplied reference images using real runtime captures and scoped measurements. Web and mobile; the bundled helpers need macOS and iOS Simulator."
+description: "Implement or check UI against supplied screenshots, design exports or reference images using real runtime captures and scoped measurements: making a screen match a reference, or visual QA against one. Web and mobile; the bundled helpers need macOS and iOS Simulator."
 ---
 
 # Match a UI reference

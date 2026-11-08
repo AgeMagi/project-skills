@@ -1,4 +1,0 @@
-interface:
-  display_name: "Add Simulated App"
-  short_description: "Add a preview format to an existing simulation product"
-  default_prompt: "Use $add-simulated-app to add the requested preview format and verify persistence and fidelity."
