@@ -62,7 +62,7 @@ python3 scripts/copy_skills.py --project /absolute/path/my-project --instruction
 Without `--instructions` the helper never touches project instructions.
 
 - Skills go to `.claude/skills/` by default; add `--target agents` for a Codex-only project without the symlink.
-- Omit `--use-cases` to install all 17 skills; both `main/` directories must be checked out.
+- Omit `--use-cases` to install all 18 skills; both `main/` directories must be checked out.
 - Available use cases: `engineering`, `ui-ux`.
 
 For a single skill, copy its complete directory. This example installs only the primary UI skill and refuses an existing destination:
@@ -98,6 +98,7 @@ If an older project still keeps separate `.agents/skills/` and `.claude/skills/`
 | Engineering | [tdd](engineering/main/tdd/SKILL.md) | Build or fix test-first at agreed seams |
 | Engineering | [codebase-design](engineering/main/codebase-design/SKILL.md) | Vocabulary for module depth, seams and interfaces |
 | Engineering | [diagnosing-bugs](engineering/main/diagnosing-bugs/SKILL.md) | Debug hard bugs and regressions from a failing loop |
+| Engineering | [review-standards-and-spec](engineering/main/review-standards-and-spec/SKILL.md) | Review a diff against the project's standards and its issue |
 | Engineering | [review-fix-pr-frontend](engineering/main/review-fix-pr-frontend/SKILL.md) | Review web/Flutter changes and fix authorized defects |
 | Engineering | [review-fix-pr-backend](engineering/main/review-fix-pr-backend/SKILL.md) | Review API, auth, data, jobs and reliability changes |
 | Engineering | [linear-task-workflow](engineering/main/linear-task-workflow/SKILL.md) | Deliver work tracked in Linear: branch, PR and status |

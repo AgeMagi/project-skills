@@ -81,6 +81,12 @@
     },
     {
       "category": "engineering",
+      "name": "review-standards-and-spec",
+      "source": "Copied from mattpocock/skills@4ae2317 (MIT) as code-review, renamed and made portable; see engineering/main/README.md",
+      "path": "engineering/main/review-standards-and-spec"
+    },
+    {
+      "category": "engineering",
       "name": "codebase-design",
       "source": "Copied from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
       "path": "engineering/main/codebase-design"

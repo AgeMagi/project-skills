@@ -14,6 +14,7 @@ Skills for planning, designing, building, debugging, reviewing and delivering co
 | [tdd](tdd/SKILL.md) | Build or fix test-first at agreed seams | Automatically or by name |
 | [codebase-design](codebase-design/SKILL.md) | Shared vocabulary for module depth, seams and interfaces | Automatically or by name |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md) | Debug hard bugs and performance regressions: build a failing loop first, then reproduce, hypothesise, fix | Automatically or by name |
+| [review-standards-and-spec](review-standards-and-spec/SKILL.md) | Review a diff on two separate axes: the project's documented standards (plus a baseline of code smells) and the issue it came from | Automatically or by name |
 | [review-fix-pr-frontend](review-fix-pr-frontend/SKILL.md) | Review a web or Flutter PR or diff and fix the defects it introduced | Automatically or by name |
 | [review-fix-pr-backend](review-fix-pr-backend/SKILL.md) | Review a backend PR or diff and fix API, auth, data, job or reliability defects | Automatically or by name |
 
@@ -28,5 +29,6 @@ Local changes, so the skills work in any project rather than only after upstream
 - `to-tickets`: finds the tracker from the project's `AGENTS.md` / `CLAUDE.md` instead of the setup skill, drops the `ready-for-agent` triage label, and leaves delivery to the project's workflow (for example `linear-task-workflow`).
 - `tdd`: refactoring no longer points at an upstream `code-review` skill; `codebase-design` is referenced by name rather than through Claude's Skill tool.
 - `grill-with-docs`: describes how to combine the two skills instead of calling Claude's Skill tool, so it also reads correctly in Codex.
+- `review-standards-and-spec` (upstream `code-review`, added 2026-11-11 for tellback): renamed so it doesn't shadow Claude Code's built-in `/code-review`, which hunts bugs while this one checks standards and spec; finds the tracker from `AGENTS.md` / `CLAUDE.md` instead of the setup skill; reads issue ids from the PR body and branch name too (Linear `HAB-123`); and counts `AGENTS.md` and `CLAUDE.md` as standards sources.
 
-Not taken from upstream: `implement`, `implement-spec` and `to-spec` (overlap `linear-task-workflow` and need the setup skill), `code-review` (overlaps `review-fix-pr-*` and clashes with Claude Code's built-in `/code-review`), `triage` (built on GitHub triage labels), `wayfinder` (heavy; revisit now that `research` and `prototype` are here), `setup-matt-pocock-skills` and `ask-matt` (project facts belong in each project's own `AGENTS.md`), personal productivity skills, and the frozen `misc/` and unfinished `in-progress/` buckets.
+Not taken from upstream: `implement`, `implement-spec` and `to-spec` (overlap `linear-task-workflow` and need the setup skill), `triage` (built on GitHub triage labels), `wayfinder` (heavy; revisit now that `research` and `prototype` are here), `setup-matt-pocock-skills` and `ask-matt` (project facts belong in each project's own `AGENTS.md`), personal productivity skills, and the frozen `misc/` and unfinished `in-progress/` buckets.
