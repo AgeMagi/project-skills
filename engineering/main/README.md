@@ -15,14 +15,15 @@ Skills for planning, designing, building, debugging, reviewing and delivering co
 | [codebase-design](codebase-design/SKILL.md) | Shared vocabulary for module depth, seams and interfaces | Automatically or by name |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md) | Debug hard bugs and performance regressions: build a failing loop first, then reproduce, hypothesise, fix | Automatically or by name |
 | [review-standards-and-spec](review-standards-and-spec/SKILL.md) | Review a diff on two separate axes: the project's documented standards (plus a baseline of code smells) and the issue it came from | Automatically or by name |
+| [start-pr-discussion](start-pr-discussion/SKILL.md) | Talk a PR through before changing it: its own commits, what it changes and the user flow, and a standards-and-spec review, with nothing fixed | Automatically or by name |
 | [review-fix-pr-frontend](review-fix-pr-frontend/SKILL.md) | Review a web or Flutter PR or diff and fix the defects it introduced | Automatically or by name |
 | [review-fix-pr-backend](review-fix-pr-backend/SKILL.md) | Review a backend PR or diff and fix API, auth, data, job or reliability defects | Automatically or by name |
 
-`grill-with-docs` needs `grilling` and `domain-modeling` installed beside it; `tdd` uses `codebase-design` when present. Install the whole use case to keep these links working.
+`grill-with-docs` needs `grilling` and `domain-modeling` installed beside it; `tdd` uses `codebase-design` when present; `start-pr-discussion` runs `review-standards-and-spec`. Install the whole use case to keep these links working.
 
 ## Provenance
 
-`linear-task-workflow`, `review-fix-pr-frontend` and `review-fix-pr-backend` are this library's own skills, moved here from the former `project-workflow` and `review` use cases. The rest were copied from [mattpocock/skills](https://github.com/mattpocock/skills) at commit `4ae2317ddb22b046e26455e4f9c9b3aaaf62212d` (MIT; the license is bundled in each skill's `licenses/`). The first six matched the copies installed in tellback; `diagnosing-bugs`, `prototype` and `research` were added from the same commit unchanged.
+`linear-task-workflow`, `review-fix-pr-frontend` and `review-fix-pr-backend` are this library's own skills, moved here from the former `project-workflow` and `review` use cases. `start-pr-discussion` is also this library's own, written for tellback on 2026-11-14. The rest were copied from [mattpocock/skills](https://github.com/mattpocock/skills) at commit `4ae2317ddb22b046e26455e4f9c9b3aaaf62212d` (MIT; the license is bundled in each skill's `licenses/`). The first six matched the copies installed in tellback; `diagnosing-bugs`, `prototype` and `research` were added from the same commit unchanged.
 
 Local changes, so the skills work in any project rather than only after upstream's `setup-matt-pocock-skills`:
 
