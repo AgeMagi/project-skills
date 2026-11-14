@@ -1,4 +1,0 @@
-interface:
-  display_name: "Match UI Reference"
-  short_description: "Implement UI to match references with runtime captures"
-  default_prompt: "Use $match-ui-reference to implement or compare this UI against the supplied reference using real runtime captures."
