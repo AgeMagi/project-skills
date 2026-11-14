@@ -87,6 +87,12 @@
     },
     {
       "category": "engineering",
+      "name": "start-pr-discussion",
+      "source": "This library's own skill, written 2026-11-14 for tellback from the PR walkthroughs of HAB-341 and HAB-339",
+      "path": "engineering/main/start-pr-discussion"
+    },
+    {
+      "category": "engineering",
       "name": "codebase-design",
       "source": "Copied from mattpocock/skills@4ae2317 (MIT); see engineering/main/README.md",
       "path": "engineering/main/codebase-design"

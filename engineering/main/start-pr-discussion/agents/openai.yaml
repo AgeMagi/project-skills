@@ -1,0 +1,3 @@
+interface:
+  display_name: "Start PR Discussion"
+  short_description: "Explain a PR and its user flow, then review it without fixing"
